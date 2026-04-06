@@ -176,10 +176,26 @@
         .paper-venue { font-style: italic; color: #555; font-size: 0.88em; }
  
         .no-notes { font-size: 0.88em; color: #888; font-style: italic; margin-bottom: 8px; }
+
+        .organizer-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .organizer-photo {
+            width: 128px;
+            height: 128px;
+            object-fit: cover;
+            border: 2px solid #000;
+            background: #e9e9e9;
+            flex-shrink: 0;
+        }
  
         @media (max-width: 600px) {
             .home-container { padding: 15px 8px; }
             .home-content { padding: 15px; }
+            .organizer-card { flex-direction: column; align-items: flex-start; }
         }
     </style>
 </head>
@@ -188,6 +204,7 @@
 <nav class="site-nav">
     <a onclick="showPage('home')"     id="nav-home"     class="active">Home</a>
     <a onclick="showPage('meetings')" id="nav-meetings">Meetings</a>
+    <a onclick="showPage('topic')"    id="nav-topic">Topic of the Month</a>
 </nav>
  
 <!-- HOME -->
@@ -201,8 +218,8 @@
         <div class="info-box">
             <strong>Current Topic of the Month</strong>
             <span class="status-badge status-current">Active</span><br>
-            <span style="font-size:1.15em;">Reliable AI</span><br>
-            <span style="color:#555; font-size:0.9em;">March 2026 &nbsp;·&nbsp; Next meeting: Friday, March 20, 5-7 PM</span>
+            <span style="font-size:1.15em;">Continual Learning</span><br>
+            <span style="color:#555; font-size:0.9em;">April 2026 &nbsp;·&nbsp; Next meeting: April 10th, 5-7 PM</span>
         </div>
 
         <h2>Welcome</h2>
@@ -225,17 +242,18 @@
         <hr class="article-divider">
 
         <h2>This Past Week...</h2>
-        <p><strong>Topic:</strong> Reliable AI</p>
+        <p><strong>Topic:</strong> Reliable AI (March)</p>
         <ul class="paper-list">
-            <li><a href="https://arxiv.org/pdf/2509.15541">Stress Testing Deliberative Alignment for Anti-Scheming Training</a></li>
-            <li><a href="https://people.eecs.berkeley.edu/~sseshia/pubdir/atva18.pdf">Formal Specification for Deep Neural Networks</a> <span class="paper-venue">with discussion of how formal methods + AI has changed since 2018</span></li>
-            <li><a href="https://lilianweng.github.io/posts/2024-11-28-reward-hacking/">Reward Hacking in Reinforcement Learning</a></li>
+            <li><em>Reluplex: An Efficient SMT Solver for Verifying Deep Neural Networks</em></li>
+            <li><em>CoT May Be Highly Informative Despite "Unfaithfulness" (from METR)</em></li>
         </ul>
 
         <hr class="article-divider">
 
         <h2>Recent Meetings</h2>
         <ul class="paper-list">
+            <li>Mar 20 &nbsp;·&nbsp; <em>Reluplex: An Efficient SMT Solver for Verifying Deep Neural Networks</em></li>
+            <li>Mar 20 &nbsp;·&nbsp; <em>CoT May Be Highly Informative Despite "Unfaithfulness" (from METR)</em></li>
             <li>Feb 27 &nbsp;·&nbsp; <em>Mastering Diverse Domains through World Models</em></li>
             <li>Feb 27 &nbsp;·&nbsp; <em>Masked Contrastive Representation Learning for RL (M-CURL)</em></li>
             <li>Feb 13 &nbsp;·&nbsp; <em>Contrastive Unsupervised Representations for RL (CURL)</em></li>
@@ -268,12 +286,16 @@
 
         <hr class="article-divider">
 
-        <h2>Organizer</h2>
-        <p>
-	    <a href="https://www.vkethana.com"><strong>Vijay Kethana</strong></a><br>
-            <a href="mailto:vkethana@berkeley.edu" style="color:#0000ff;">vkethana@berkeley.edu</a><br>
-            <span style="color:#555; font-size:0.95em;">UC Berkeley</span>
-        </p>
+        <h2>About the Organizer</h2>
+        <div class="organizer-card">
+            <img src="vijaypfp.png" alt="Photo of Vijay Kethana" class="organizer-photo">
+            <p>
+                Hi everyone, my name's <a href="https://www.vkethana.com">Vijay</a>, and I'm a third-year computer science major. 
+                I'm interested in natural language processing (NLP), machine learning systems, and AI in general. 
+                Outside of school, I enjoy cooking and hiking.<br>
+                <a href="mailto:vkethana at berkeley dot edu" style="color:#0000ff;">vkethana@berkeley.edu</a>
+            </p>
+        </div>
 
         <hr class="article-divider">
 
@@ -292,12 +314,38 @@
     </div>
     <div class="home-content">
  
-        <h2>Current <span class="status-badge status-current">Mar 2026</span></h2>
+        <h2>Current <span class="status-badge status-current">Apr 2026</span></h2>
+        <p style="color:#555; font-size:0.9em; margin-bottom:16px;">Continual Learning</p>
  
         <div class="meeting-card topic-current">
             <div class="meeting-card-header">
+                <h3>Apr 10, 2026</h3>
+                <span class="meeting-card-meta">Topic of the Month: Continual Learning</span>
+            </div>
+            <div class="meeting-card-body">
+                <p class="no-notes">Meeting notes coming soon.</p>
+            </div>
+        </div>
+ 
+        <hr class="article-divider">
+        <h2>Past <span class="status-badge status-past">Mar 2026 · Topic of the Month</span></h2>
+        <p style="color:#555; font-size:0.9em; margin-bottom:16px;">Reliable AI</p>
+
+        <div class="meeting-card">
+            <div class="meeting-card-header">
+                <h3>Mar 20, 2026</h3>
+            </div>
+            <div class="meeting-card-body">
+                <ul class="paper-list">
+                    <li><em>Reluplex: An Efficient SMT Solver for Verifying Deep Neural Networks</em></li>
+                    <li><em>CoT May Be Highly Informative Despite "Unfaithfulness" (from METR)</em></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="meeting-card">
+            <div class="meeting-card-header">
                 <h3>Mar 13, 2026</h3>
-                <span class="meeting-card-meta">Topic of the Month: Reliable AI</span>
             </div>
             <div class="meeting-card-body">
                 <ul class="paper-list">
@@ -307,7 +355,7 @@
                 </ul>
             </div>
         </div>
- 
+
         <hr class="article-divider">
         <h2>Past <span class="status-badge status-past">Feb 2026 · Topic of the Month</span></h2>
         <p style="color:#555; font-size:0.9em; margin-bottom:16px;">Representation Learning for Reinforcement Learning</p>
@@ -495,6 +543,38 @@
     </div>
 </div>
  
+<!-- TOPIC OF THE MONTH -->
+<div id="page-topic" class="page home-container">
+    <div class="home-header">
+        <h1>Topic of the Month</h1>
+        <div style="color:#ccc; font-style:italic; margin-top:6px;">Monthly focus, suggested papers, and formulations</div>
+    </div>
+    <div class="home-content">
+        <h2>Current Topic <span class="status-badge status-current">Apr 2026</span></h2>
+        <p><strong>Continual Learning</strong></p>
+        <p style="color:#555;">
+            Continual learning = models that learn from experience over time, as opposed to static models that are trained once and cannot update ''online'' from new user feedback or interactions.
+        </p>
+
+        <hr class="article-divider">
+
+        <h2>Suggested Papers</h2>
+        <ul class="paper-list">
+            <li><a href="https://arxiv.org/abs/1612.00796">Learning without Forgetting</a> <span class="paper-venue">(ECCV 2016)</span></li>
+            <li><a href="https://www.pnas.org/doi/10.1073/pnas.1611835114">Overcoming Catastrophic Forgetting in Neural Networks (EWC)</a> <span class="paper-venue">(PNAS 2017)</span></li>
+            <li><a href="https://arxiv.org/abs/1706.08840">Gradient Episodic Memory for Continual Learning (GEM)</a> <span class="paper-venue">(NeurIPS 2017)</span></li>
+            <li><a href="https://arxiv.org/abs/1611.07725">iCaRL: Incremental Classifier and Representation Learning</a> <span class="paper-venue">(CVPR 2017)</span></li>
+            <li><a href="https://arxiv.org/abs/1812.00420">A-GEM: Efficient Lifelong Learning with a Tiny Episodic Memory</a> <span class="paper-venue">(ICLR 2019 Workshop / practical baseline)</span></li>
+            <li><a href="https://arxiv.org/abs/2004.07211">Dark Experience Replay for Continual Learning</a> <span class="paper-venue">(NeurIPS 2020)</span></li>
+        </ul>
+
+        <hr class="article-divider">
+
+        <h2>Some common formalisms and ideas</h2>
+        Coming soon...
+    </div>
+</div>
+
 <script>
     function showPage(name) {
         document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
